@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.3.0" name="pp.plugin.morganstanley.provider">
+   <implementation class="pp.plugin.morganstanley.MorganStanleyExtractorProvider"/>
+   <service>
+      <provide interface="name.abuchen.portfolio.datatransfer.spi.ExtractorProvider"/>
+   </service>
+</scr:component>

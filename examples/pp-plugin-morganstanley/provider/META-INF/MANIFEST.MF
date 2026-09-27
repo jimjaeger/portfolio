@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Morgan Stanley Importer (Plugin)
+Bundle-SymbolicName: pp.plugin.morganstanley
+Bundle-Version: 0.1.0
+Bundle-RequiredExecutionEnvironment: JavaSE-21
+Import-Package: name.abuchen.portfolio.datatransfer,
+ name.abuchen.portfolio.datatransfer.pdf,
+ name.abuchen.portfolio.datatransfer.spi;version="[1.0,2)",
+ name.abuchen.portfolio.model
+Service-Component: OSGI-INF/pp.plugin.morganstanley.provider.xml

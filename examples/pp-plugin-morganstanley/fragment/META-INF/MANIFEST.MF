@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Morgan Stanley Importer (Extractor Fragment)
+Bundle-SymbolicName: pp.plugin.morganstanley.extractor
+Bundle-Version: 0.1.0
+Fragment-Host: name.abuchen.portfolio;bundle-version="[0.87.0,0.88.0)"
+Bundle-RequiredExecutionEnvironment: JavaSE-21

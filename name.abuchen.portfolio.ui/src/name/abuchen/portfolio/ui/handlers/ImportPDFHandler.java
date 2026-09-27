@@ -43,6 +43,7 @@ import name.abuchen.portfolio.ui.PortfolioPlugin;
 import name.abuchen.portfolio.ui.UIConstants;
 import name.abuchen.portfolio.ui.editor.FilePathHelper;
 import name.abuchen.portfolio.ui.editor.PortfolioPart;
+import name.abuchen.portfolio.ui.preferences.ImporterPreferences;
 import name.abuchen.portfolio.ui.wizards.datatransfer.ImportExtractedItemsWizard;
 import name.abuchen.portfolio.ui.wizards.datatransfer.ImportWizardDialog;
 
@@ -188,7 +189,8 @@ public class ImportPDFHandler
             Map<File, PDFInputFile> failedFiles = new HashMap<>();
 
             IRunnableWithProgress operation = monitor -> {
-                PDFImportAssistant assistent = new PDFImportAssistant(client, files);
+                PDFImportAssistant assistent = new PDFImportAssistant(client, files,
+                                ImporterPreferences.getSelection());
                 result.putAll(assistent.run(monitor, errors));
                 failedFiles.putAll(assistent.getFailedInputFiles());
             };

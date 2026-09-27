@@ -215,6 +215,29 @@ public interface UIConstants
         String EXPERIMENTS = "EXPERIMENTS"; //$NON-NLS-1$
 
         /**
+         * Whether importer plugins are installed from the plugins folder of
+         * the workspace at startup.
+         */
+        String IMPORTER_PLUGINS_ENABLED = "IMPORTER_PLUGINS_ENABLED"; //$NON-NLS-1$
+
+        /**
+         * Comma-separated list of symbolic names of the importer plugins that
+         * are started.
+         */
+        String IMPORTER_PLUGINS_ACTIVE = "IMPORTER_PLUGINS_ACTIVE"; //$NON-NLS-1$
+
+        /**
+         * Comma-separated list of extractor ids that are disabled.
+         */
+        String IMPORTER_DISABLED = "IMPORTER_DISABLED"; //$NON-NLS-1$
+
+        /**
+         * Comma-separated list of extractor ids that are evaluated before the
+         * built-in extractors.
+         */
+        String IMPORTER_PREFERRED = "IMPORTER_PREFERRED"; //$NON-NLS-1$
+
+        /**
          * @deprecated Preference key used in 2023 to indicate whether the survey is active.
          * Do not reuse!
          */

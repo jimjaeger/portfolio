@@ -30,6 +30,7 @@ import name.abuchen.portfolio.ui.preferences.ExperimentsPreferencePage;
 import name.abuchen.portfolio.ui.preferences.FinnhubPreferencePage;
 import name.abuchen.portfolio.ui.preferences.FormattingPreferencePage;
 import name.abuchen.portfolio.ui.preferences.GeneralPreferencePage;
+import name.abuchen.portfolio.ui.preferences.ImportersPreferencePage;
 import name.abuchen.portfolio.ui.preferences.HistoricalPricesPreferencePage;
 import name.abuchen.portfolio.ui.preferences.LanguagePreferencePage;
 import name.abuchen.portfolio.ui.preferences.LeewayPreferencePage;
@@ -97,6 +98,7 @@ public class OpenPreferenceDialogHandler
         pm.addTo("api", new PreferenceNode("quandl", new QuandlPreferencePage())); //$NON-NLS-1$ //$NON-NLS-2$
 
         pm.addToRoot(new PreferenceNode("proxy", new ProxyPreferencePage())); //$NON-NLS-1$
+        pm.addToRoot(new PreferenceNode("importers", new ImportersPreferencePage())); //$NON-NLS-1$
         pm.addToRoot(new PreferenceNode("experiments", new ExperimentsPreferencePage())); //$NON-NLS-1$
         if (UpdateHelper.isInAppUpdateEnabled())
             pm.addToRoot(new PreferenceNode("updates", new UpdatePreferencePage())); //$NON-NLS-1$

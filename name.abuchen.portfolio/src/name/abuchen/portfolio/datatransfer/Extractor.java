@@ -892,6 +892,15 @@ public interface Extractor
     }
 
     /**
+     * Returns a stable identifier of the extractor, e.g. to store user
+     * preferences. The label is translated and therefore not suitable as key.
+     */
+    default String getId()
+    {
+        return getClass().getName();
+    }
+
+    /**
      * Returns a readable label for the type of documents
      */
     String getLabel();

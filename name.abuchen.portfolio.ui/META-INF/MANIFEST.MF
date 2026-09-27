@@ -114,6 +114,7 @@ Import-Package: com.google.common.annotations,
  org.jsoup,
  org.jsoup.safety,
  org.osgi.framework,
+ org.osgi.framework.wiring,
  org.osgi.service.component.annotations,
  org.osgi.service.event,
  org.osgi.service.prefs

@@ -1289,9 +1289,13 @@ public class Messages extends NLS
     public static String PrefFinnhubAPIKey;
     public static String PrefLabelAlwaysDisplayCurrencyCode;
     public static String PrefLabelAutoSaveFrequency;
+    public static String PrefLabelDisabledImporters;
     public static String PrefLabelDisplayPA;
     public static String PrefLabelEnableExperimentalFeatures;
+    public static String PrefLabelImporterPluginsActive;
+    public static String PrefLabelLoadImporterPlugins;
     public static String PrefLabelNote;
+    public static String PrefLabelPreferredImporters;
     public static String PrefLabelProxyHost;
     public static String PrefLabelProxyPort;
     public static String PrefLabelQuoteDigits;
@@ -1302,7 +1306,9 @@ public class Messages extends NLS
     public static String PrefMsgBackup;
     public static String PrefMsgCalendar;
     public static String PrefMsgConfigureUpdates;
+    public static String PrefMsgImporterPluginsWarning;
     public static String PrefMsgLanguageConfig;
+    public static String PrefMsgNoImporterPlugins;
     public static String PrefMyDividends24APIKey;
     public static String PrefNoteIndirectQuotation;
     public static String PrefNoteStoreSettingsNextToFile;
@@ -1325,6 +1331,7 @@ public class Messages extends NLS
     public static String PrefTitleFinnhub;
     public static String PrefTitleFormatting;
     public static String PrefTitleGeneral;
+    public static String PrefTitleImporters;
     public static String PrefTitleLanguage;
     public static String PrefTitleLeeway;
     public static String PrefTitleMyDividends24;

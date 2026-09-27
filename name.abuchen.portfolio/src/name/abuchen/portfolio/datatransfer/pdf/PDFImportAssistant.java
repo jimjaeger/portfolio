@@ -3,6 +3,7 @@ package name.abuchen.portfolio.datatransfer.pdf;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -16,6 +17,8 @@ import name.abuchen.portfolio.PortfolioLog;
 import name.abuchen.portfolio.datatransfer.Extractor;
 import name.abuchen.portfolio.datatransfer.Extractor.Item;
 import name.abuchen.portfolio.datatransfer.SecurityCache;
+import name.abuchen.portfolio.datatransfer.spi.ExtractorProviders;
+import name.abuchen.portfolio.datatransfer.spi.ExtractorSelection;
 import name.abuchen.portfolio.model.Client;
 
 public class PDFImportAssistant
@@ -26,6 +29,18 @@ public class PDFImportAssistant
     private final Map<File, PDFInputFile> failedInputFiles = new HashMap<>();
 
     public PDFImportAssistant(Client client, List<File> files)
+    {
+        this(client, files, ExtractorSelection.DEFAULT);
+    }
+
+    /**
+     * @param selection
+     *            extractors disabled or preferred by the user; extractors
+     *            contributed by other bundles (see
+     *            {@link name.abuchen.portfolio.datatransfer.spi.ExtractorProvider})
+     *            are evaluated after the built-in extractors unless preferred
+     */
+    public PDFImportAssistant(Client client, List<File> files, ExtractorSelection selection)
     {
         this.client = client;
         this.files = files;
@@ -162,6 +177,18 @@ public class PDFImportAssistant
         extractors.add(new WitheBoxGmbHPDFExtractor(client));
         extractors.add(new WeberbankPDFExtractor(client));
         extractors.add(new ZuercherKantonalbankPDFExtractor(client));
+
+        var arranged = selection.arrange(List.copyOf(extractors), ExtractorProviders.collect(client));
+        extractors.clear();
+        extractors.addAll(arranged);
+    }
+
+    /**
+     * Returns the extractors in the order they are evaluated.
+     */
+    public List<Extractor> getExtractors()
+    {
+        return Collections.unmodifiableList(extractors);
     }
 
     public Map<Extractor, List<Item>> run(IProgressMonitor monitor, Map<File, List<Exception>> errors)
